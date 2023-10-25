@@ -1,0 +1,47 @@
+<form action="" [formGroup]="myform">
+  <h1 mat-dialog-title>{{matdilogdata.title}}</h1>
+  <div mat-dialog-content>
+
+
+
+    <mat-form-field>
+      <mat-label>name</mat-label>
+      <input type="text" matInput formControlName="name">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>email</mat-label>
+      <input type="text" matInput formControlName="email">
+      <mat-error *ngIf="myform.controls.email.invalid">{{getErrorMessage()}}</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>phone</mat-label>
+      <input type="text" matInput formControlName="phone">
+    </mat-form-field>
+
+    <div>
+      <mat-radio-group aria-label="Select an option" formControlName="gender">
+        <mat-label><b>Gender</b></mat-label>
+        <mat-radio-button value="male">male</mat-radio-button>
+        <mat-radio-button value="female">female</mat-radio-button>
+        <mat-radio-button value="others">other</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div>
+      <mat-checkbox formControlName="status" (change)="getchekboxvalue($event)"> is
+        active</mat-checkbox>
+
+    </div>
+  </div>
+
+
+  <div mat-dialog-actions>
+    <button mat-raised-button type="button" color="warn" (click)="closepopup()">close</button>
+    <button mat-raised-button *ngIf="matdilogdata.title=='add customer'" [disabled]="myform.invalid" color="primary"
+      (click)="saveuser()">save</button>
+    <button mat-raised-button color="primary" *ngIf="matdilogdata.title==='edit customer'"
+      (click)="updateuser()">update</button>
+
+  </div>
+
+</form>

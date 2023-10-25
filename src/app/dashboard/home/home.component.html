@@ -1,0 +1,25 @@
+<div class="container-fluid g-0">
+
+  <app-header (sideNavClicked)="getBurgerMenuClick($event)"></app-header>
+
+  <main>
+    <app-sidebar id="app-sidebar" [getSideNavStatus]="sideNavStaus"
+      [ngClass]="sideNavStaus?'appside-nav-open':'appside-nav-close'"
+      (getsideNavStatus2)="newstatusofSideNav($event)"></app-sidebar>
+
+
+
+    <div id="sidearea" [ngClass]="sideNavStaus?'display-area-shrink':'display-area'"
+      class="m-lg-2 container-fluid bg-danger-subtle" style="height: 88vh;">
+      <!-- <p class="fs-1 fs-bold fst-italic">heeeeeeeee</p> -->
+      <router-outlet></router-outlet>
+
+      <!-- <div class="container bg-danger mystyle" style="height: 40vh; width: 100vw;">
+        <app-analytics></app-analytics>
+      </div> -->
+
+    </div>
+
+
+  </main>
+</div>

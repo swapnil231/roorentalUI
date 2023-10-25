@@ -1,0 +1,71 @@
+app-header{
+  position: fixed;
+  width: 100%;
+  top:0px;
+  height: 4rem;
+  z-index: 2;
+
+
+}
+main{
+  position:absolute;
+  width: 100%;
+  top:4rem;
+
+  z-index: 1;
+
+}
+
+app-sidebar{
+  position:absolute;
+  left:0rem;
+  // width:55px;
+  // width:250px;
+  height: calc(100vh - 4rem);
+  background-color:rgb(55, 55, 55) ;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+  border-top: 1px solid white;
+  overflow: hidden;
+  white-space:nowrap;
+  transition: width 250ms ease-in;
+
+}
+
+
+
+// .appside-nav-open{
+//   width: 250px;
+// }
+.appside-nav-open{
+  width: 0px;
+}
+.appside-nav-close{
+  width: 250px;
+}
+
+
+.display-area-shrink{
+  position: absolute;
+  width: calc(100% - 0px);
+  left:0px ;
+  transition: width 250ms ease-in, left 250ms ease-in ;
+}
+
+//  .display-area{
+//   position: absolute;
+//   left: 60px;
+//   width: calc(100% - 60px);
+//   transition: width 250ms ease-in, left 250ms ease-in ;
+//  }
+ .display-area{
+  position: absolute;
+  left: 250px;
+  width: calc(100% - 250px);
+  transition: width 250ms ease-in, left 250ms ease-in ;
+ }
+.mystyle{
+    margin-top:38vh;
+    margin-left: -8px;
+    width: 100vw;
+
+}
